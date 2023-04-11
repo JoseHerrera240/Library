@@ -52,12 +52,12 @@ const CreateAcountAdmin = () => {
                 <h1>Parnaso</h1>
                 <p>We are here to make your bookstore grow</p>
                 <input
-                    placeholder='Nombre completo'
+                    placeholder='Complete Name'
                     type='text'
                     onChange={e => setName(e.target.value)}
                 />
                 <input
-                    placeholder='Nombre de la librería'
+                    placeholder='Name library'
                     type='text'
                     onChange={e => setNameLibrary(e.target.value)}
                 />
@@ -67,12 +67,12 @@ const CreateAcountAdmin = () => {
                     onChange={e => setEmail(e.target.value)}
                 />
                 <input
-                    placeholder='Contraseña'
+                    placeholder='Password'
                     type='password'
                     onChange={e => setPassword(e.target.value)}
                 />
                 <input
-                    placeholder='Repita la contraseña'
+                    placeholder='Repeat password'
                     type='password'
                     onChange={e => setRepeatPassword(e.target.value)}
                 />
