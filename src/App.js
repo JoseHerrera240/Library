@@ -4,6 +4,7 @@ import CreateAcountAdmin from './Components/CreateAcountAdmin/Index';
 import CreateAcountUser from './Components/CreateAcountUser/Index';
 import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import HomeAdmin from './Components/HomeAdmin';
+import UserHome from './Components/UserHome';
 function App() {
 
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ function App() {
     {
       path: "/homeAdmin",
       element: <HomeAdmin/>
+    },
+    {
+      path: "/userHome",
+      element: <UserHome/>
     },
 
   ])
