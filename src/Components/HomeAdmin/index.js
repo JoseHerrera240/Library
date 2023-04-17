@@ -1,9 +1,10 @@
 import * as React from 'react';
 
 //MUI
+import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell,  { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
@@ -25,20 +26,38 @@ const rows = [
     createData('Domain', 'overcoming', 12, true),
 ];
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+  
+
 const HomeAdmin = () => {
+
+  
 
     return (
         <div className='homeAdmin'>
-            <h1>homeAdmin</h1>
+            <div className='gridHomeAdmin'>
+                <h1>Home Admin</h1>
+                <button id='create' name='create' className='button buttonCreate'>
+                    <img src={Create} width={45} alt='create' />
+                </button>
+            </div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Book Name</TableCell>
-                            <TableCell align="center">Category</TableCell>
-                            <TableCell align="center">Price</TableCell>
-                            <TableCell align="center">availability to rent</TableCell>
-                            <TableCell align="center">Changes</TableCell>
+                            <StyledTableCell>Book Name</StyledTableCell>
+                            <StyledTableCell align="center">Category</StyledTableCell>
+                            <StyledTableCell align="center">Price</StyledTableCell>
+                            <StyledTableCell align="center">availability to rent</StyledTableCell>
+                            <StyledTableCell align="center">Changes</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -60,14 +79,14 @@ const HomeAdmin = () => {
                                             id={row.name}
                                             name={row.name}
                                         >
-                                            <img src={Edit} width={35} alt='edit'/>
+                                            <img src={Edit} width={35} alt='edit' />
                                         </button>
                                         <button
                                             className='button buttonDelete'
                                             id={row.name}
                                             name={row.name}
                                         >
-                                            <img src={Delete} width={25} alt='delete'/>
+                                            <img src={Delete} width={25} alt='delete' />
                                         </button>
                                     </div>
                                 </TableCell>
@@ -76,9 +95,7 @@ const HomeAdmin = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <button id='create' name='create' className='button buttonCreate'>
-                <img src={Create} width={45} alt='create'/>
-            </button>
+
         </div>
     );
 }
