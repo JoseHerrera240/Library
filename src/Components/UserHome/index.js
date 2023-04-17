@@ -6,8 +6,14 @@ import './UserHome.sass'
 
 //'behind you', 'terror', 100, true 
 //Faltaría la descripción
+let library = [
+    {id:'1', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'},
+    {id:'2', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'},
+    {id:'3', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'}
+]
 
 const userHome = () => {
+    console.log(library)
     return (
         <div>
             <section className="navBarGrid">

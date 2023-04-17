@@ -18,6 +18,8 @@ import './HomeAdmin.sass'
 function createData(name, category, price, rent) {
     return { name, category, price, rent };
 }
+
+//a ese array le falta la descripción y una id
 const rows = [
     createData('behind you', 'terror', 100, true),
     createData('2 SISTERS DETECTIVE AGENCY', 'police', 25, true),
@@ -38,9 +40,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
 
 const HomeAdmin = () => {
-
-  
-
     return (
         <div className='homeAdmin'>
             <div className='gridHomeAdmin'>
