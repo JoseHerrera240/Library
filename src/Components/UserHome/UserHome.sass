@@ -15,38 +15,49 @@
     gap: 50px
     justify-items: center
     .cardGrid
-        border: 1px solid black
+        box-shadow: 7px -1px 8px 5px #d5c6c6
         display: grid
-        border-radius: 5px
+        border-radius: 10px
+        overflow: hidden
         max-width: 350px
-        grid-template-columns: repeat(2,1fr)
-        grid-template-rows: 4fr repeat(4, minmax(100px 400px))
-        grid-template-areas: "image image" "title title" "description description" "price gender" "buy rent"
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-areas: "image image""title title""description description""price gender""buy rent"
         img
             grid-area: image
             width: 100%
-            max-width: 300px
+            max-width: 350px
+            max-height: 278px   
         .title
             grid-area: title
             font-weight: 700
+            text-align: center
+            padding: 0 15px
         .description
             grid-area: description
             font-weight: 500
+            font-size: 18px
+            text-align: center
+            padding: 0 10px
         .price
             grid-area: price
             font-weight: 700
+            padding: 0 0 0 10px
+            text-align: center
         .gender
             grid-area: gender
+            text-align: center
             font-weight: 700
         .buy
             grid-area: buy
             cursor: pointer
             background-color: #5ce66e
+            border-radius: 0 0 0 10px
             img
                 width: 40px
         .rent
             grid-area: rent
             cursor: pointer
             background-color: #451253
+            border-radius: 0 0 10px 0
             img
                 width: 40px

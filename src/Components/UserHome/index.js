@@ -1,130 +1,72 @@
 import ButtonMenu from "../ButtonMenu";
-import portada from '../../Assets/portadas/portada.jpg'
 import buy from '../../Assets/Icons/buy.png'
 import rent from '../../Assets/Icons/rent.png'
 import './UserHome.sass'
 
-//'behind you', 'terror', 100, true 
-//Faltaría la descripción
 let library = [
-    {id:'1', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'},
-    {id:'2', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'},
-    {id:'3', title: 'behind you', description:'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',gender: 'terror', price:'100', viability:'true'}
+  {
+    id: '1',
+    image: 'https://www.adobe.com/es/express/create/cover/media_18d86248e8c6c00f18e7461e58ee5291a8485f45f.jpeg?width=400&format=jpeg&optimize=medium',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '2',
+    image: 'https://marketplace.canva.com/EAFEL6G6JSU/1/0/1003w/canva-portada-de-libro-pdf-electr%C3%B3nico-digital-silueta-persona-rosa-azul-oS2hyQNbxmM.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  }
 ]
 
 const userHome = () => {
-    console.log(library)
-    return (
-        <div>
-            <section className="navBarGrid">
-                <ButtonMenu />
-                <ButtonMenu />
-                <ButtonMenu />
-                <ButtonMenu />
-            </section>
-            <section className="containerCardsGrid">
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                    <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-                <div className="cardGrid">
-                    <img src={portada} alt="" />
-                    <h1 className="title" >title:....</h1>
-                    <p className="gender">Gender: terror</p>
-                    <p className="description">description: ??? </p>
-                    <p className="price">Price: $9999</p>
-                      <button className="buy"><img src={buy} alt="buy"/></button>
-                    <button className="rent"><img src={rent} alt="rent" /></button>
-                </div>
-            </section>
-        </div>
-    );
+  console.log(library)
+  return (
+    <div>
+      <section className="navBarGrid">
+        <ButtonMenu />
+        <ButtonMenu />
+        <ButtonMenu />
+        <ButtonMenu />
+      </section>
+      <section className="containerCardsGrid">
+        {library.length > 0 ?
+          library.map(function (value) {
+            return (
+              <div className="cardGrid" key={value.id}>
+                <img src={value.image} alt="" />
+                <h1 className="title" >{value.title}</h1>
+                <p className="gender">Gender: {value.gender}</p>
+                <p className="description">{value.description}</p>
+                <p className="price">Price: ${value.price}</p>
+                <button className="buy"><img src={buy} alt="buy" /></button>
+                <button className="rent"><img src={rent} alt="rent" /></button>
+              </div>
+            )
+          })
+          :
+          <p>Not found</p>
+
+        }
+
+
+      </section>
+    </div>
+  );
 };
 
 export default userHome 

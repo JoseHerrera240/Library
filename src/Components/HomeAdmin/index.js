@@ -19,7 +19,7 @@ function createData(name, category, price, rent) {
     return { name, category, price, rent };
 }
 
-//a ese array le falta la descripción y una id
+//a ese array le falta la descripción y una id y una imagen
 const rows = [
     createData('behind you', 'terror', 100, true),
     createData('2 SISTERS DETECTIVE AGENCY', 'police', 25, true),
