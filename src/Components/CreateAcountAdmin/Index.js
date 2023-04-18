@@ -16,11 +16,7 @@ const CreateAcountAdmin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
-
-
-    // la idea es crear un array que guarde los Admin yya existentes y los que esta creando
-    //hacer una alerta cuando ya fue creado con exito y devolverlo a la pagina de inicio
-    let AdminAcount = [
+    const [adminAcount, setAdminAcount] = useState([
         {
             identification: '1000570051',
             name: 'Jose David Herrera',
@@ -35,44 +31,70 @@ const CreateAcountAdmin = () => {
             email: 'voldemos@gmail.com',
             password: 'voldemor123'
         }
-    ]
+    ]);
+    const aaaadminAcount = [
+        {
+            identification: '1000570051',
+            name: 'Jose David Herrera',
+            nameLibrary: 'luKastro',
+            email: 'hjose0650@gmail.com',
+            password: 'Nuryamparo123'
+        },
+        {
+            identification: '1000560052',
+            name: 'Jose Luis peralta',
+            nameLibrary: 'voldemor',
+            email: 'voldemos@gmail.com',
+            password: 'voldemor123'
+        }
+    ];
+
+    //ya esta creando, ahora falta la validación que no existan multiples cuentas con los mismos valores
 
     const checkCreateAdmin = () => {
         if (identification !== "" && email !== "" && password !== "" && name !== "" && repeatPassword !== "" && nameLibrary !== "") {
             if (email.includes("@") && email.includes(".co")) {
-                const emailValidate = AdminAcount.some(obj => obj.email === email);
-                const identificationValidate = AdminAcount.some(obj => obj.identification === identification);
-                const libraryValidation = AdminAcount.some(obj => obj.nameLibrary === nameLibrary);
-                    if (emailValidate || identificationValidate || libraryValidation) {
-                        if(emailValidate){
-                            return Swal.fire({
-                                icon: 'error',
-                                title: "That email already exists"
-                            })
-                        }else if(identificationValidate){
-                            return Swal.fire({
-                                icon: 'error',
-                                title: "That identification already exists"
-                            })
-                        }else{
-                            return Swal.fire({
-                                icon: 'error',
-                                title: "That name library already exists"
-                            })
-                        }
+                const emailValidate = aaaadminAcount?.some(obj => obj.email === email);
+                const identificationValidate = aaaadminAcount?.some(obj => obj.identification === identification);
+                const libraryValidation = aaaadminAcount?.some(obj => obj.nameLibrary === nameLibrary);
+                if (emailValidate || identificationValidate || libraryValidation) {
+                    if (emailValidate) {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "That email already exists"
+                        })
+                    } else if (identificationValidate) {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "That identification already exists"
+                        })
                     } else {
-                        if (password === repeatPassword) {
-                            return Swal.fire({
-                                icon: 'success',
-                                title: "Done"
-                            })
-                        } else {
-                            return Swal.fire({
-                                icon: 'error',
-                                title: "the keys do not match"
-                            })
-                        }
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "That name library already exists"
+                        })
                     }
+                } else {
+                    if (password === repeatPassword) {
+                        let object = {
+                            identification: identification,
+                            name: name,
+                            nameLibrary: nameLibrary,
+                            email: email,
+                            password: password
+                        }
+                        setAdminAcount(current => [...current, object])
+                        return Swal.fire({
+                            icon: 'success',
+                            title: "Done"
+                        })
+                    } else {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "the keys do not match"
+                        })
+                    }
+                }
             } else {
                 return Swal.fire({
                     icon: 'info',

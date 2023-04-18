@@ -30,6 +30,69 @@ let library = [
     gender: 'terror',
     price: '100',
     viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
+  },
+  {
+    id: '3',
+    image: 'https://template.canva.com/EADwi4xAG6I/1/0/256w-JBWCAd5q564.jpg',
+    title: 'behind you',
+    description: 'The story narrates three months of the life of the colonel and his wife who live, mired in poverty and misery, in a small tropical town in Colombia.',
+    gender: 'terror',
+    price: '100',
+    viability: 'true'
   }
 ]
 
