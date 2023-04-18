@@ -1,20 +1,26 @@
 //components
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Button } from '@mui/material'
 
 //Icons
 import EnjoyIcon from '../../Assets/Icons/innovation.png';
 import ComeBack from '../../Assets/Icons/izquierda.png';
 //styles
-import { Button } from '@mui/material'
 import './CreateAcoutn.sass'
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const CreateAcountUser = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
+    
+
+    // la idea es crear un array que guarde los usuarios yya existentes y los que esta creando
+    // crear unos usuarios de prueba
+    //hacer una condición que si el correo ya existe, no se puede crear 
+    //hacer una alerta cuando ya fue creado con exito y devolverlo a la pagina de inicio
 
 
     const checkCreateUser = () => {

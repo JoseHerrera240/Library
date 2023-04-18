@@ -33,6 +33,14 @@ let library = [
   }
 ]
 
+//en el usuario nos falta crear bastantes cosas
+// primero sería un carrito que el pueda agregar los libros si los va a comprar y tambien en el 
+//carrito pueda agregar los que va a rentar
+//contar con metodos de pagos(no funcionales)
+//debe tener filtros de busqueda, diferenciados por categoria 
+// tambien debe contar con una opción de ver más 
+
+
 const userHome = () => {
   console.log(library)
   return (

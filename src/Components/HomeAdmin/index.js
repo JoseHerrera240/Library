@@ -19,6 +19,10 @@ function createData(name, category, price, rent) {
     return { name, category, price, rent };
 }
 
+//la idea es poner en funcionamiento los botones para hacer un crud de libros
+//otra idea más a largo plazo es gestionar las finanzas y ver que libros estan en renta y que libros se venden mucho
+//con la idea anterior sería tener un stock de libros
+
 //a ese array le falta la descripción y una id y una imagen
 const rows = [
     createData('behind you', 'terror', 100, true),

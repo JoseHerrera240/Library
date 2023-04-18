@@ -16,6 +16,13 @@ const CreateAcountAdmin = () => {
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
 
+    
+    // la idea es crear un array que guarde los Admin yya existentes y los que esta creando
+    // crear unos admins de prueba
+    //hacer una condición que si el correo ya existe, no se puede crear
+    //otra condicion que diga que si la libreria ya existe no se puede crear
+    //hacer una alerta cuando ya fue creado con exito y devolverlo a la pagina de inicio
+
     const checkCreateAdmin = () => {
         if (email !== "" && password !== "" && name !== "" &&  repeatPassword !== "" && nameLibrary !== "") {
             if (email.includes("@") && email.includes(".co")) {

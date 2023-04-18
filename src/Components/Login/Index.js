@@ -23,6 +23,11 @@ function Login() {
         setUser(!user)
     }
 
+    //en el login hace falta que cuando ingrese el usuario o el admin, verificar el correo y la contraseña
+    //si alguno de los dos no coincide, crear una alerta que diga que estan incorrectos los datos de ingreso
+    // y preguntar que si ya tiene una cuenta
+    //a largo plazo podemos crear un envío de correo que mande la contraseña actual
+
     const checkUser = () => {
         if (emailUser !== "" && passwordUSer !== "") {
             if (emailUser.includes("@") && emailUser.includes(".co")) {
