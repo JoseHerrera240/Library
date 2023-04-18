@@ -10,33 +10,69 @@ import ComeBack from '../../Assets/Icons/izquierda.png';
 import './CreateAcoutn.sass'
 
 const CreateAcountAdmin = () => {
+    const [identification, setIdentification] = useState("");
     const [name, setName] = useState("");
     const [nameLibrary, setNameLibrary] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
 
-    
+
     // la idea es crear un array que guarde los Admin yya existentes y los que esta creando
-    // crear unos admins de prueba
-    //hacer una condición que si el correo ya existe, no se puede crear
-    //otra condicion que diga que si la libreria ya existe no se puede crear
     //hacer una alerta cuando ya fue creado con exito y devolverlo a la pagina de inicio
+    let AdminAcount = [
+        {
+            identification: '1000570051',
+            name: 'Jose David Herrera',
+            nameLibrary: 'luKastro',
+            email: 'hjose0650@gmail.com',
+            password: 'Nuryamparo123'
+        },
+        {
+            identification: '1000560052',
+            name: 'Jose Luis peralta',
+            nameLibrary: 'voldemor',
+            email: 'voldemos@gmail.com',
+            password: 'voldemor123'
+        }
+    ]
 
     const checkCreateAdmin = () => {
-        if (email !== "" && password !== "" && name !== "" &&  repeatPassword !== "" && nameLibrary !== "") {
+        if (identification !== "" && email !== "" && password !== "" && name !== "" && repeatPassword !== "" && nameLibrary !== "") {
             if (email.includes("@") && email.includes(".co")) {
-                if(password === repeatPassword){
-                    return Swal.fire({
-                        icon: 'success',
-                        title: "that's all"
-                    })
-                }else{
-                    return Swal.fire({
-                        icon: 'error',
-                        title: "the keys do not match"
-                    })
-                }
+                const emailValidate = AdminAcount.some(obj => obj.email === email);
+                const identificationValidate = AdminAcount.some(obj => obj.identification === identification);
+                const libraryValidation = AdminAcount.some(obj => obj.nameLibrary === nameLibrary);
+                    if (emailValidate || identificationValidate || libraryValidation) {
+                        if(emailValidate){
+                            return Swal.fire({
+                                icon: 'error',
+                                title: "That email already exists"
+                            })
+                        }else if(identificationValidate){
+                            return Swal.fire({
+                                icon: 'error',
+                                title: "That identification already exists"
+                            })
+                        }else{
+                            return Swal.fire({
+                                icon: 'error',
+                                title: "That name library already exists"
+                            })
+                        }
+                    } else {
+                        if (password === repeatPassword) {
+                            return Swal.fire({
+                                icon: 'success',
+                                title: "Done"
+                            })
+                        } else {
+                            return Swal.fire({
+                                icon: 'error',
+                                title: "the keys do not match"
+                            })
+                        }
+                    }
             } else {
                 return Swal.fire({
                     icon: 'info',
@@ -44,6 +80,7 @@ const CreateAcountAdmin = () => {
                     html: 'Please check the mail, since it does not match the standards'
                 })
             }
+
         } else {
             return Swal.fire({
                 icon: 'info',
@@ -58,6 +95,11 @@ const CreateAcountAdmin = () => {
             <form className='formRegister'>
                 <h1>Parnaso</h1>
                 <p>We are here to make your bookstore grow</p>
+                <input
+                    placeholder='identification'
+                    type='text'
+                    onChange={e => setIdentification(e.target.value)}
+                />
                 <input
                     placeholder='Complete Name'
                     type='text'
