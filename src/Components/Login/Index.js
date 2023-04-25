@@ -6,7 +6,7 @@ import ComeBack from '../../Assets/Icons/izquierda.png';
 import Swal from 'sweetalert2';
 //styles
 import './Login.sass'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [admin, setAdmin] = useState(false);
@@ -15,23 +15,60 @@ function Login() {
     const [passwordUSer, setPasswordUSer] = useState("");
     const [emailAdmin, setEmailAdmin] = useState("");
     const [passwordAdmin, setPasswordAdmin] = useState("");
+    const [adminAcount, setAdminAcount] = useState([
+        {
+            identification: '1000570051',
+            name: 'Jose David Herrera',
+            nameLibrary: 'luKastro',
+            email: 'hjose0650@gmail.com',
+            password: 'Nuryamparo123'
+        },
+        {
+            identification: '1000560052',
+            name: 'Jose Luis peralta',
+            nameLibrary: 'voldemor',
+            email: 'voldemos@gmail.com',
+            password: 'voldemor123'
+        }
+    ]);
+    const [userAcount, setUserAcount] = useState([
+        {
+            identification: '1000570051',
+            name: 'Jose David Herrera',
+            email: 'hjose0650@gmail.com',
+            password: 'Nuryamparo123'
+        },
+        {
+            identification: '1000560052',
+            name: 'Jose Luis peralta',
+            email: 'voldemos@gmail.com',
+            password: 'voldemor123'
+        }
+    ]);
+    const regexEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
+    const navigate = useNavigate();
 
     const changeAdmin = () => {
         setAdmin(!admin)
     }
+
     const changeUser = () => {
         setUser(!user)
     }
 
-    //en el login hace falta que cuando ingrese el usuario o el admin, verificar el correo y la contraseña
-    //si alguno de los dos no coincide, crear una alerta que diga que estan incorrectos los datos de ingreso
-    // y preguntar que si ya tiene una cuenta
-    //a largo plazo podemos crear un envío de correo que mande la contraseña actual
-
     const checkUser = () => {
         if (emailUser !== "" && passwordUSer !== "") {
-            if (emailUser.includes("@") && emailUser.includes(".co")) {
-                return null
+            if (regexEmail.test(emailUser)) {
+                const emailValidate = userAcount?.some(obj => obj.email === emailUser);
+                const passwordValidate = userAcount?.some(obj => obj.password === passwordUSer);
+                if (!emailValidate || !passwordValidate) {
+                    return Swal.fire({
+                        icon: 'error',
+                        title: "The username or password is not correct"
+                    })
+                } else {
+                    navigate('/userHome');
+                }
             } else {
                 return Swal.fire({
                     icon: 'info',
@@ -50,8 +87,17 @@ function Login() {
 
     const checkAdmin = () => {
         if (emailAdmin !== "" && passwordAdmin !== "") {
-            if (emailAdmin.includes("@") && emailAdmin.includes(".co")) {
-                return null
+            if (regexEmail.test(emailAdmin)) {
+                const emailValidate = adminAcount?.some(obj => obj.email === emailAdmin);
+                const passwordValidate = adminAcount?.some(obj => obj.password === passwordAdmin);
+                if (!emailValidate || !passwordValidate) {
+                    return Swal.fire({
+                        icon: 'error',
+                        title: "The username or password is not correct"
+                    })
+                } else {
+                    navigate('/homeAdmin');
+                }
             } else {
                 return Swal.fire({
                     icon: 'info',
@@ -67,7 +113,7 @@ function Login() {
             })
         }
     }
-    
+
 
     return (
         <div className='parent-card-init'>
