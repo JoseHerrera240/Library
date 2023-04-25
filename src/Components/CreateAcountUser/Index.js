@@ -11,31 +11,63 @@ import ComeBack from '../../Assets/Icons/izquierda.png';
 import './CreateAcoutn.sass'
 
 const CreateAcountUser = () => {
+    const [identification, setIdentification] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
+    const [userAcount, setUserAcount] = useState([
+        {
+            identification: '1000570051',
+            name: 'Jose David Herrera',
+            email: 'hjose0650@gmail.com',
+            password: 'Nuryamparo123'
+        },
+        {
+            identification: '1000560052',
+            name: 'Jose Luis peralta',
+            email: 'voldemos@gmail.com',
+            password: 'voldemor123'
+        }
+    ]);
+    const regexEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
     
-
-    // la idea es crear un array que guarde los usuarios yya existentes y los que esta creando
-    // crear unos usuarios de prueba
-    //hacer una condición que si el correo ya existe, no se puede crear 
-    //hacer una alerta cuando ya fue creado con exito y devolverlo a la pagina de inicio
-
-
     const checkCreateUser = () => {
         if (email !== "" && password !== "" && name !== "" && repeatPassword !== "") {
-            if (email.includes("@") && email.includes(".co")) {
-                if (password === repeatPassword) {
-                    return Swal.fire({
-                        icon: 'success',
-                        title: "that's all"
-                    })
+            if (regexEmail.test(email)) {
+                const emailValidate = userAcount?.some(obj => obj.email === email);
+                const identificationValidate = userAcount?.some(obj => obj.identification === identification);
+                if (emailValidate || identificationValidate) {
+                    if (emailValidate) {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "That email already exists"
+                        })
+                    } else {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "That identification already exists"
+                        })
+                    }
                 } else {
-                    return Swal.fire({
-                        icon: 'error',
-                        title: "the keys do not match"
-                    })
+                    if (password === repeatPassword) {
+                        let object = {
+                            identification: identification,
+                            name: name,
+                            email: email,
+                            password: password
+                        }
+                        setUserAcount(current => [...current, object])
+                        return Swal.fire({
+                            icon: 'success',
+                            title: "Done"
+                        })
+                    } else {
+                        return Swal.fire({
+                            icon: 'error',
+                            title: "the keys do not match"
+                        })
+                    }
                 }
             } else {
                 return Swal.fire({
@@ -58,6 +90,11 @@ const CreateAcountUser = () => {
             <form className='formRegister'>
                 <h1>Parnaso</h1>
                 <p>We hope you find the book of your dreams</p>
+                <input
+                    placeholder='Identification'
+                    type='text'
+                    onChange={e => setIdentification(e.target.value)}
+                />
                 <input
                     placeholder='Name'
                     type='text'

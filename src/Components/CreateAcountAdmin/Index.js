@@ -32,31 +32,15 @@ const CreateAcountAdmin = () => {
             password: 'voldemor123'
         }
     ]);
-    const aaaadminAcount = [
-        {
-            identification: '1000570051',
-            name: 'Jose David Herrera',
-            nameLibrary: 'luKastro',
-            email: 'hjose0650@gmail.com',
-            password: 'Nuryamparo123'
-        },
-        {
-            identification: '1000560052',
-            name: 'Jose Luis peralta',
-            nameLibrary: 'voldemor',
-            email: 'voldemos@gmail.com',
-            password: 'voldemor123'
-        }
-    ];
 
-    //ya esta creando, ahora falta la validación que no existan multiples cuentas con los mismos valores
+    const regexEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
 
     const checkCreateAdmin = () => {
         if (identification !== "" && email !== "" && password !== "" && name !== "" && repeatPassword !== "" && nameLibrary !== "") {
-            if (email.includes("@") && email.includes(".co")) {
-                const emailValidate = aaaadminAcount?.some(obj => obj.email === email);
-                const identificationValidate = aaaadminAcount?.some(obj => obj.identification === identification);
-                const libraryValidation = aaaadminAcount?.some(obj => obj.nameLibrary === nameLibrary);
+            if (regexEmail.test(email)) {
+                const emailValidate = adminAcount?.some(obj => obj.email === email);
+                const identificationValidate = adminAcount?.some(obj => obj.identification === identification);
+                const libraryValidation = adminAcount?.some(obj => obj.nameLibrary === nameLibrary);
                 if (emailValidate || identificationValidate || libraryValidation) {
                     if (emailValidate) {
                         return Swal.fire({
